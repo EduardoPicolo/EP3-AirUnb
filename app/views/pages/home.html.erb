@@ -1,0 +1,38 @@
+<h1>AirUnB</h1>
+
+<% if user_signed_in? %>
+    <h2>Welcome <%= current_user.email %> </h2>
+        <li><%= link_to "New spot", new_spot_path %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+    <% else %>
+      <ul>
+        <li><%= link_to "Sign up", new_user_registration_path %><br /></li>
+        <li><%= link_to "Sign in", new_user_session_path %><br /></li>
+      </ul>
+    <% end %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spots.each do |spot| %>
+      <tr>
+        <td><%= spot.address %></td>
+        <td><%= spot.description %></td>
+        <td><%= spot.price %></td>
+        <td><%= link_to 'Show', spot %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to "Show more spots", spots_path %>
