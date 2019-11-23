@@ -1,17 +1,4 @@
-<h1>AirUnB</h1>
-
-<% if user_signed_in? %>
-    <h2>Welcome <%= current_user.email %> </h2>
-        <li><%= link_to "New spot", new_spot_path %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-    <% else %>
-      <ul>
-        <li><%= link_to "Sign up", new_user_registration_path %><br /></li>
-        <li><%= link_to "Sign in", new_user_session_path %><br /></li>
-      </ul>
-    <% end %>
-
-<br>
+<h1> Find the best spot </h1>
 
 <div style="display: flex; flex-direction: row; justify-content: space-evenly">
     <% @spots.each do |spot| %>
