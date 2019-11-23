@@ -17,7 +17,7 @@
     <% @spots.each do |spot| %>
         <% if spot.image.attached? %>
             <div style="width: 250px; height: auto">
-                <%= link_to image_tag(spot.image, style:"width: 100%"), spot %>
+                <%= link_to image_tag(spot.image, style:"width: 100%; height: 100%"), spot %>
             </div>
         <% end %>
     <% end %>
