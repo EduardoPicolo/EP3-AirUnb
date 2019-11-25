@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # attr_accessor :email, :password, :password_confirmation, :remember_me
+
+  belongs_to :rolable, polymorphic: true
+
   has_many :spots
 end
