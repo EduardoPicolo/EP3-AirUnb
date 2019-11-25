@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
+  root to: 'pages#home'
+  devise_for :users, :controllers => { :registrations => 'users/registrations' }
+  resources :spots
   resources :hosts
   resources :customers
-  root to: 'pages#home'
-  resources :spots
-  # devise_for :users
-  devise_for :users, :controllers => { :registrations => 'users/registrations' }
-  # get 'tenant/sign_up' => 'user_registrations#new', :user => { :user_type => 'tenant' }
-  # get 'customer/sign_up' => 'user_registrations#new', :user => { :user_type => 'customer' }
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # root to: "home#index"
+
+  get '/account-selection', to: 'pages#account_selection'
+  get '/users/sign_up?user[user_type]=customer', to: 'users/registrations#new'
+  get '/users/sign_up?user[user_type]=host', to: 'users/registrations#new'
 end

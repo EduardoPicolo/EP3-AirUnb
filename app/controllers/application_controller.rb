@@ -10,10 +10,4 @@ class ApplicationController < ActionController::Base
     |opts={}| send("current_#{k.underscore}") || not_authorized 
     end 
   end
-# Overriding the Devise current_user method
-#   alias_method :devise_current_user, :current_user
-#   def current_user
-#     # It will now return either a Tenant or a Customer, instead of the plain User.
-#     super.rolable
-#   end
 end
