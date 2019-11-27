@@ -1,3 +1,3 @@
-class Customer < ApplicationRecord
-    has_one :user, as: :rolable, dependent: :destroy
+class Customer < User
+    # has_one :user, as: :rolable, dependent: :destroy
 end

@@ -1,3 +1,4 @@
-class Host < ApplicationRecord
-    has_one :user, as: :rolable, dependent: :destroy
+class Host < User
+    # has_one :user, as: :rolable, dependent: :destroy
+    has_many :spots
 end
