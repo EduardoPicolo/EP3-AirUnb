@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%
+<%#
   # customized code begin
 
   params[:user][:user_type] ||= 'customer'
@@ -19,8 +19,8 @@
 %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= my_devise_error_messages! %>
-  <%#= render "devise/shared/error_messages", resource: resource %>
+  <%#= my_devise_error_messages! %>
+  <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -41,12 +41,12 @@
   </div>
 
   <% # customized code begin %>
-  <%= fields_for resource.rolable do |rf| %>
-    <% render :partial => "#{child_class_name.underscore}_fields", :locals => { :f => rf } %>
-  <% end %>
+  <%#= fields_for resource.rolable do |rf| %>
+    <%# render :partial => "#{child_class_name.underscore}_fields", :locals => { :f => rf } %>
+  <%# end %>
 
   <%#= hidden_field :user, :user_type, :value => user_type %>
-    <%= hidden_field :user, :user_type, value: user_type %>
+    <%#= hidden_field :user, :user_type, value: user_type %>
   <% # customized code end %>
 
   <div class="actions">
@@ -54,4 +54,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
