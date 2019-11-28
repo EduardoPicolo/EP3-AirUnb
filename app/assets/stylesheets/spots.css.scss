@@ -1,0 +1,37 @@
+// Place all the styles related to the Spots controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+ul.spot-list {
+    width: 100%;
+    list-style: none;
+    display: grid;  
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5rem;
+    margin-bottom: 10px;
+}
+
+ul.spot-list li {
+    width: 250px;
+    height: auto;
+    border: 2px solid grey;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+ul.spot-list li header {
+    margin-bottom: 1rem;
+}
+
+ul.spot-list li strong {
+    padding: 1rem;
+}
+
+ul.spot-list li p {
+    padding: 1rem;
+}
+
+ul.spot-list li span {
+    padding: 1rem;
+}
