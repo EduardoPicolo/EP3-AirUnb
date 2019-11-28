@@ -26,6 +26,7 @@ class SpotsController < ApplicationController
   # POST /spots.json
   def create
     @spot = current_user.spots.build(spot_params)
+    add_default_image(@spot)
 
     respond_to do |format|
       if @spot.save
@@ -71,5 +72,14 @@ class SpotsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def spot_params
       params.require(:spot).permit(:address, :description, :price, :image)
+    end
+
+    def add_default_image(spot)
+      unless spot.image.attached?
+        spot.image.attach(
+            io: File.open(Rails.root.join('app', 'assets', 'images', 'Placeholder.png')),
+            filename: 'Placeholder.png', content_type: 'image/png'
+        )
+        end
     end
 end
