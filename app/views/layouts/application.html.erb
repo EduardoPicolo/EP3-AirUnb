@@ -17,10 +17,10 @@
           <nav class="collapse navbar-collapse navbar-ex1-collapse">
             <% if user_signed_in? -%>
               <ul class="nav navbar-nav navbar-right">
-                <li><%= link_to 'New spot', new_spot_path %></li>
                 <% if current_user.type == 'Customer' %>
                     <li><%= link_to 'Account', edit_customer_registration_path %></li>
                   <% else %>
+                    <li><%= link_to 'New spot', new_spot_path %></li>
                     <li><%= link_to 'Account', edit_host_registration_path %></li>
                 <% end %>
                 <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
