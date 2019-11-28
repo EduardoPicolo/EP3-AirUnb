@@ -49,10 +49,8 @@ ActiveRecord::Schema.define(version: 2019_11_27_022504) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
     t.integer "host_id"
     t.index ["host_id"], name: "index_spots_on_host_id"
-    t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
