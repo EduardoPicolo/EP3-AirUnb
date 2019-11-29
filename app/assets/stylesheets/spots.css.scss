@@ -8,16 +8,23 @@ ul.spot-list {
     display: grid;  
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 5rem;
+    margin-top: 5rem;
     margin-bottom: 10px;
 }
 
 ul.spot-list li {
     width: 250px;
     height: auto;
-    border: 2px solid grey;
+    border: 1px solid rgb(122, 122, 122);
     border-radius: 1rem;
     margin-bottom: 10px;
     word-wrap: break-word;
+
+    &:hover{
+        border: 2px solid grey;
+        transform: scale(1.025);
+        box-shadow: inset 0 0 0.5em lightyellow, 0 0 0.52em black;
+    }
 }
 
 ul.spot-list li header {
