@@ -1,8 +1,9 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%#= render "devise/shared/error_messages", resource: resource %>
+  <%= devise_error_messages! %>
 
 <div class="panel panel-primary">
-<div class="panel-heading"><strong>SIGN UP</strong></div>
+<div class="panel-heading"><strong>CREATE A <%= resource_name.to_s.humanize.upcase %> ACCOUNT</strong></div>
   <div class="panel-body">
 
     <div class="form-inputs">

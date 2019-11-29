@@ -10,41 +10,52 @@
   </head>
 
 <body>
-    <header class="navbar navbar-default" role="navigation">
-      <div class="navbar-inner">
-        <div class="container">
-          <div id="logo" class="navbar-brand"><%= link_to "AirUnB", root_path %></div>
-          <nav class="collapse navbar-collapse navbar-ex1-collapse">
-            <% if user_signed_in? -%>
-              <ul class="nav navbar-nav navbar-right">
-                <% if current_user.type == 'Customer' %>
-                    <li><%= link_to 'Account', edit_customer_registration_path %></li>
-                  <% else %>
-                    <li><%= link_to 'New spot', new_spot_path %></li>
-                    <li><%= link_to 'Account', edit_host_registration_path %></li>
-                <% end %>
-                <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-              </ul>
-            <% else -%>
-              <ul class="nav navbar-nav pull-right">
-                <li><%= link_to 'Sign up', '/account-selection' %></li>
-                <li><%= link_to 'Sign in', new_user_session_path %></li>
-              </ul>
-            <% end -%>
-          </nav>
-        </div>
-      </div>
-  </header>
-
-      <div id="main_content" class="container">
-        <% flash.each do |name, msg| %>
-          <%= content_tag(:div, msg, class: "alert alert-info") %>
-        <% end %>
-
-        <div id="content" class="conteiner">
-          <%= yield %>
-        </div>
+  <header class="navbar navbar-default" role="navigation">
+    <div class="navbar-inner">
+      <div class="container">
+        <div id="logo" class="navbar-brand"><%= link_to "AirUnB", root_path %></div>
+        <nav class="collapse navbar-collapse navbar-ex1-collapse">
+          <% if user_signed_in? -%>
+            <ul class="nav navbar-nav navbar-right">
+              <% if current_user.type == 'Customer' %>
+                  <li><%= link_to 'Account', edit_customer_registration_path %></li>
+                <% else %>
+                  <li><%= link_to 'New spot', new_spot_path %></li>
+                  <li><%= link_to 'Account', edit_host_registration_path %></li>
+              <% end %>
+              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+            </ul>
+          <% else -%>
+            <ul class="nav navbar-nav pull-right">
+              <li><%= link_to 'Sign up', '/account-selection' %></li>
+              <li><%= link_to 'Sign in', new_user_session_path %></li>
+            </ul>
+          <% end -%>
+        </nav>
       </div>
     </div>
+  </header>
+
+  <div id="main_content" class="container">
+    <% flash.each do |key, value| %>
+      <% if value.class == Array %>
+        <div class="<%= flash_class(key) %>">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+            <% value.each do |message| %>  
+              <%= message %>
+              </br>
+            <% end %>
+        </div>
+      <% else %>
+        <div class="<%= flash_class(key) %>">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+            <%= value %>
+        </div>
+      <% end %>
+    <% end %>
+    <div id="content" class="conteiner">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
