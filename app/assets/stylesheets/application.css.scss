@@ -28,11 +28,29 @@
 	}
 }
 
+#logo {
+	font-size: 27px;
+	font-weight: 700;
+	font-style: oblique;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding: 15px 0;
+	a {
+		color: rgb(5, 135, 255);
+	}
+}
+
+header li{
+	font-weight: 700;
+	margin-left: 1rem;
+}
+
 #main_content {
 	#content {
         justify-content: center;
 		float: none;
-		margin-top: 15px;
+		padding-top: 5rem;
+		margin-top: 3rem;
     }
 	padding-bottom: 100px;
 }

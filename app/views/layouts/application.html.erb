@@ -10,7 +10,7 @@
   </head>
 
 <body>
-  <header class="navbar navbar-default" role="navigation">
+  <header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="navbar-inner">
       <div class="container">
         <div id="logo" class="navbar-brand"><%= link_to "AirUnB", root_path %></div>
@@ -27,8 +27,8 @@
             </ul>
           <% else -%>
             <ul class="nav navbar-nav pull-right">
-              <li><%= link_to 'Sign up', '/account-selection' %></li>
-              <li><%= link_to 'Sign in', new_user_session_path %></li>
+              <li><%= link_to 'SIGN UP', '/account-selection' %></li>
+              <li><%= link_to 'LOGIN', new_user_session_path %></li>
             </ul>
           <% end -%>
         </nav>
