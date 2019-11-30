@@ -58,3 +58,6 @@ gem 'devise'
 gem 'jquery-rails'
 
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+
+gem 'commontator'
+gem 'sassc-rails'

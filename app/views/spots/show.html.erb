@@ -21,6 +21,8 @@
   <%= @spot.price %>
 </p>
 
+<%= commontator_thread(@spot) %>
+
 <% if @spot.host == current_user %>
  <%= link_to 'Edit', edit_spot_path(@spot) %> |
 <% end %>
