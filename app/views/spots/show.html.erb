@@ -29,6 +29,7 @@
 <%= commontator_thread(@spot) %>
 <br>
 
+
 <% if current_user == @spot.host %>
   <%= link_to 'EDIT', edit_spot_path(@spot), class:"btn btn-primary" %> |
   <%= link_to 'DELETE', @spot, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %> |
