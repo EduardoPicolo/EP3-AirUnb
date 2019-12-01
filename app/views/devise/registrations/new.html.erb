@@ -31,6 +31,16 @@
         <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Password confirmation", autocomplete: "new-password" %>
       </div>
       <br>
+
+    <%# customized code begin %>
+    <%= fields_for resource.type do |rf| %>
+      <% render :partial => "#{resource.type.downcase.underscore.underscore}_fields", locals: {f: f} %>
+    <% end %>
+
+    <%#= hidden_field :user, :user_type, :value => user_type %>
+      <%#= hidden_field :user, :user_type, value: user_type %>
+    <%# customized code end %>
+
     </div>
 
       <div class="form-group">

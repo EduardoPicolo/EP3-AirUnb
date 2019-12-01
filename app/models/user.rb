@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   acts_as_commontator
+
+  validates :first_name, :last_name, :phone, :birthday, presence: true
 end

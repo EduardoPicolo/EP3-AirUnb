@@ -40,6 +40,10 @@
         <%= f.password_field :current_password, class:"form-control", placeholder: "Current password", autocomplete: "current-password" %>
       </div>
 
+      <%= fields_for resource.type do |rf| %>
+        <% render :partial => "#{resource.type.downcase.underscore.underscore}_fields", locals: {f: f} %>
+      <% end %>
+
     </div>
 
     <div class="form-group">

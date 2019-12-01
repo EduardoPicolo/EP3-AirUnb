@@ -1,0 +1,27 @@
+<%= f.label :first_name %>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-sunglasses"></i></span>
+    <%= f.text_field :first_name, class:"form-control", placeholder:"First name" %>
+</div>
+<br>
+
+<%= f.label :last_name %>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-sunglasses"></i></span>
+    <%= f.text_field :last_name, class:"form-control", placeholder:"Last name" %>
+</div>
+<br>
+
+<%= f.label :phone %>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+    <%= f.text_field :phone, class:"form-control", placeholder:"Phone number" %>
+</div>
+<br>
+
+<%= f.label :birthday %>
+<div class="input-group date">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+    <%= f.date_select :birthday, class:"form-control", placeholder:"Birthday" %>
+</div>
+<br>
