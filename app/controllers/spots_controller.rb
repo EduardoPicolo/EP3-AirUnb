@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
   before_action :set_spot, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_host!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
 
   # GET /spots
   # GET /spots.json
