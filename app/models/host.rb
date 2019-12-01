@@ -1,5 +1,5 @@
 class Host < User
     has_many :spots, dependent: :destroy
 
-    validates :first_name, :last_name, :phone, :birthday, presence: true
+    validates :company_name, :company_address, :birthday, :phone, :cnpj, presence: true
 end

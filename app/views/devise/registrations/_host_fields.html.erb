@@ -1,27 +1,34 @@
-<%= f.label :first_name %>
+<%= f.label :company_name %>
 <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-sunglasses"></i></span>
-    <%= f.text_field :first_name, class:"form-control", placeholder:"First name" %>
+    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+    <%= f.text_field :company_name, class:"form-control", placeholder:"Company name" %>
 </div>
 <br>
 
-<%= f.label :last_name %>
+<%= f.label :company_address %>
 <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-sunglasses"></i></span>
-    <%= f.text_field :last_name, class:"form-control", placeholder:"Last name" %>
+    <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+    <%= f.text_field :company_address, class:"form-control", placeholder:"Company address" %>
+</div>
+<br>
+
+<%= f.label :cnpj %>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+    <%= f.number_field :cnpj, class:"form-control", placeholder:"CNPJ" %>
 </div>
 <br>
 
 <%= f.label :phone %>
 <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
     <%= f.telephone_field :phone, class:"form-control", placeholder:"Phone number" %>
 </div>
 <br>
 
-<%= f.label :birthday %>
+<%= f.label :date_of_founding %>
 <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920, class:"form-control", placeholder:"Birthday" %>
+    <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1800, class:"form-control", placeholder:"Date of founding" %>
 </div>
 <br>
