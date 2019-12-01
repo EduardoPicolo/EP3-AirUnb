@@ -14,21 +14,19 @@
     <div class="navbar-inner">
       <div class="container">
         <div id="logo" class="navbar-brand"><%= link_to "AirUnB", root_path %></div>
-        <nav class="collapse navbar-collapse navbar-ex1-collapse">
+        <nav class="collapse navbar-collapse">
           <% if user_signed_in? -%>
             <ul class="nav navbar-nav navbar-right">
-              <% if current_user.type == 'Customer' %>
-                  <li><%= link_to 'Account', edit_customer_registration_path %></li>
-                <% else %>
-                  <li><%= link_to 'New spot', new_spot_path %></li>
-                  <li><%= link_to 'Account', edit_host_registration_path %></li>
+              <% if current_user.type == 'Host' %>
+                  <li><%= link_to 'NEW AD', new_spot_path %></li>
               <% end %>
-              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+              <li><%= link_to 'ACCOUNT', "/#{current_user.type.downcase}s/edit" %></li>
+              <li><%= link_to 'SIGN OUT', destroy_user_session_path, :method => :delete %></li>
             </ul>
           <% else -%>
             <ul class="nav navbar-nav pull-right">
-              <li><%= link_to 'SIGN UP', '/account-selection' %></li>
-              <li><%= link_to 'LOGIN', new_user_session_path %></li>
+              <li class="nav-item"><%= link_to 'SIGN UP', '/account-selection' %></li>
+              <li class="nav-item"><%= link_to 'LOGIN', new_user_session_path %></li>
             </ul>
           <% end -%>
         </nav>
