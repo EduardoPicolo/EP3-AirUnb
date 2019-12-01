@@ -15,13 +15,13 @@
 <%= f.label :phone %>
 <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-    <%= f.text_field :phone, class:"form-control", placeholder:"Phone number" %>
+    <%= f.telephone_field :phone, class:"form-control", placeholder:"Phone number" %>
 </div>
 <br>
 
 <%= f.label :birthday %>
-<div class="input-group date">
+<div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    <%= f.date_select :birthday, class:"form-control", placeholder:"Birthday" %>
+    <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920, class:"form-control", placeholder:"Birthday" %>
 </div>
 <br>

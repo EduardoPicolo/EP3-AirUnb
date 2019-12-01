@@ -3,6 +3,6 @@ class AddCustomfieldsToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :first_name, :string
     add_column :users, :last_name, :string
     add_column :users, :phone, :string
-    add_column :users, :birthday, :datetime
+    add_column :users, :birthday, :date
   end
 end

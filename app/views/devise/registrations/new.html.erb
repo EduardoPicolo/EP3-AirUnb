@@ -34,6 +34,7 @@
 
     <%# customized code begin %>
     <%= fields_for resource.type do |rf| %>
+      <% break if resource.type == 'Customer' %>
       <% render :partial => "#{resource.type.downcase.underscore.underscore}_fields", locals: {f: f} %>
     <% end %>
 
