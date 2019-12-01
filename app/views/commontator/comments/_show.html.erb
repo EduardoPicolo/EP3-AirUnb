@@ -20,7 +20,7 @@
 <div id="commontator-comment-<%= comment.id %>-section-top" class="section top">
   <span id="commontator-comment-<%= comment.id %>-author" class="author">
     <%#= link.blank? ? name : link_to(name, link) %>
-    <%= link_to "#{xxx.first_name.camelize} #{xxx.last_name.camelize}", "/users/#{xxx.id}", class:"text-info" %>
+    <%= link_to "#{xxx.email}", "/users/#{xxx.id}", class:"text-info" %>
   </span>
 
   <span id="commontator-comment-<%= comment.id %>-actions" class="actions">
