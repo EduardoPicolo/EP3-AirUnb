@@ -5,4 +5,8 @@ class PagesController < ApplicationController
 
     def account_selection
     end
+
+    def profile
+        @user = User.find(params[:id])
+    end
 end

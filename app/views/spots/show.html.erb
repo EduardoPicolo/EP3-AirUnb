@@ -21,7 +21,13 @@
   <%= @spot.price %>
 </p>
 
+<p>
+<%= link_to 'Owner profile', "/users/#{@spot.host_id}", class:"btn btn-primary" %>
+<br>
+</p>
+
 <%= commontator_thread(@spot) %>
+<br>
 
 <% if @spot.host == current_user %>
   <%= link_to 'EDIT', edit_spot_path(@spot), class:"btn btn-primary" %> |
