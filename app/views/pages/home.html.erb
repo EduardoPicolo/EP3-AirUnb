@@ -3,7 +3,7 @@
 <div style="display: flex; flex-direction: row; justify-content: space-evenly; padding-top: 2rem">
     <% @spots.each do |spot| %>
         <div style="width: 250px; height: auto; border: 1px solid grey">
-            <%= link_to image_tag(spot.images[0], style:"width: 100%; height: 100%"), spot %>
+            <%= link_to image_tag(spot.images.sample, style:"width: 100%; height: 100%"), spot %>
         </div>
     <% end %>
 </div>

@@ -1,6 +1,11 @@
+<div class="text-center">
+  <% if @spots.empty? %>
+    <h1>You don't have any Spots</h1>
+  <% end %>
+</div>
+
 <ul class="spot-list">
 <% @spots.each do |spot| %>
-
   <li>
     <header><%= link_to image_tag(spot.images[0], style:"width: 100%; height: 100%; border-top-left-radius: 1rem; border-top-right-radius: 1rem"), spot%></header>
     <strong><%= spot.address%></strong>

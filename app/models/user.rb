@@ -7,6 +7,4 @@ class User < ApplicationRecord
   acts_as_commontator
 
   has_one_attached :avatar
-
-  validates_length_of :phone, within: 8..9, message: "must be valid"
 end
