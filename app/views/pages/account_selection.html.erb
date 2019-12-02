@@ -1,7 +1,6 @@
-<h1> How would you like to use AirUnB? </h1>
+<h1 class="text-center"> How would you like to use AirUnB? </h1>
 <br>
-<%#= link_to 'For me', '/users/sign_up?user[user_type]=customer' %>
-<%= link_to 'For me', new_customer_registration_path %>
-<br>
-<%= link_to 'For bussiness', new_host_registration_path %>
-<%#= link_to 'For business', '/users/sign_up?user[user_type]=host' %>
+<div class="text-center">
+    <%= link_to 'FOR ME', new_customer_registration_path, class:"btn btn-primary" %>
+    <%= link_to 'FOR BUSSINESS', new_host_registration_path, class:"btn btn-primary" %>
+</div>

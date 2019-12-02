@@ -1,6 +1,6 @@
 class Spot < ApplicationRecord
     belongs_to :host
-    has_one_attached :image
+    has_many_attached :images
 
     acts_as_commontable dependent: :destroy
 

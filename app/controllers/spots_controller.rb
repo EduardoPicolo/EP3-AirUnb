@@ -73,12 +73,12 @@ class SpotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def spot_params
-      params.require(:spot).permit(:address, :description, :price, :image)
+      params.require(:spot).permit(:address, :description, :price, images: [])
     end
 
     def add_default_image(spot)
-      unless spot.image.attached?
-        spot.image.attach(
+      unless spot.images.attached?
+        spot.images.attach(
             io: File.open(Rails.root.join('app', 'assets', 'images', 'Placeholder.png')),
             filename: 'Placeholder.png', content_type: 'image/png'
         )
