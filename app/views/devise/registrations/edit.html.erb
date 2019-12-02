@@ -22,6 +22,22 @@
       </div>
       <br>
 
+      <%= f.label :avatar %>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-2">
+            <% if resource.avatar.attached? %>
+              <%= image_tag resource.avatar, style:"width: 100%; height: 100%" %>
+            <% end %>
+          </div>
+
+          <div class="coll-sm-1">
+            <%= f.file_field :avatar %>
+          </div>
+        </div>
+      </div>
+        
+
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>

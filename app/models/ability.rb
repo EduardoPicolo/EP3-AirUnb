@@ -4,18 +4,24 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    user ||= User.new
+
     alias_action :update, :destroy, to: :manage_spot
+
     if user.admin?
       can :manage, :all
       cannot :create, Spot
-    end
-      if user.type == 'Customer'
+
+      elsif user.type == 'Customer'
         can :read, Spot
-      end
-      if user.type == 'Host'
+
+      elsif user.type == 'Host'
         can [:create, :read], Spot
         can [:update, :destroy], Spot, host: user
-      end
+        
+      else
+        can :read, Spot
+    end
 
     # Define abilities for the passed in user here. For example:
     #

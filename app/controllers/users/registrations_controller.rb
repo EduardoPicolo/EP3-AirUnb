@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource(sign_up_params)
+    add_default_avatar(resource)
 
     resource.save
     yield resource if block_given?
@@ -66,7 +67,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone, :birthday,
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone, :birthday, :avatar,
                                                               :company_name, :company_address, :cnpj])
   end
 
@@ -80,4 +81,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+  def add_default_avatar(resource)
+    unless resource.avatar.attached?
+      resource.avatar.attach(
+          io: File.open(Rails.root.join('app', 'assets', 'images', 'userPlaceholder.jpeg')),
+          filename: 'userPlaceholder.jpeg', content_type: 'image/jpeg'
+      )
+      end
+  end
+
 end

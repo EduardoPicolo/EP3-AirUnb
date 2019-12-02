@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   acts_as_commontator
+
+  has_one_attached :avatar
 end

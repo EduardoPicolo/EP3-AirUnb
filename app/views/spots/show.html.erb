@@ -40,13 +40,12 @@
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @spot.price %>
+  <strong>Price: $</strong><%=@spot.price %>
 </p>
 
 <p>
-<%= link_to 'Company profile', "/users/#{@spot.host_id}", class:"btn btn-primary" %>
-<br>
+  <%= link_to 'Company profile', "/users/#{@spot.host_id}", class:"btn btn-primary" %>
+  <br>
 </p>
 
 <%= commontator_thread(@spot) %>

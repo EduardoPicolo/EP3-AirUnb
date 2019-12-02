@@ -9,11 +9,12 @@ class ApplicationController < ActionController::Base
       format.json { head :forbidden, content_type: 'text/html' }
       format.html { redirect_to main_app.root_url, notice: exception.message }
       format.js   { head :forbidden, content_type: 'text/html' }
+      end
     end
-  end
     
     protected
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_in, keys: [:first_name, :last_name, :phone, :birthday])
+        devise_parameter_sanitizer.permit(:sign_in, keys: [:first_name, :last_name, :phone, :birthday, :avatar,
+                                                              :company_name, :company_address, :cnpj])
     end
 end
