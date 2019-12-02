@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get '/account-selection', to: 'pages#account_selection'
   get '/users/:id', to: 'pages#profile'
+  get '/mySpots', to: 'pages#mySpots'
 
   mount Commontator::Engine => '/commontator'
 

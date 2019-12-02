@@ -7,6 +7,7 @@ class Ability
     alias_action :update, :destroy, to: :manage_spot
     if user.admin?
       can :manage, :all
+      cannot :create, Spot
     end
       if user.type == 'Customer'
         can :read, Spot
