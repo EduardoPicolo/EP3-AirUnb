@@ -4,4 +4,10 @@
     border-color: #b0b0b0;
     border-left: 1px solid #636363;
     box-shadow: 2px 2px 0.52em rgb(0, 0, 70);
+    transition-duration: 0.75s;
+
+    &:hover{
+        box-shadow: inset 1px 1px 0.3em rgb(252, 255, 233), 2px 2px 0.55em black;
+        transform: scale(1.02);
+    }
 }
