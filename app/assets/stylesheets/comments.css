@@ -1,0 +1,7 @@
+.comment{
+    /* padding-right: 1em; */
+    border-radius: 7px;
+    border-color: #b0b0b0;
+    border-left: 1px solid #636363;
+    box-shadow: 2px 2px 0.52em rgb(0, 0, 70);
+}

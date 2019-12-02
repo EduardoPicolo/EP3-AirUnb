@@ -29,7 +29,7 @@
         commontator.edit_comment_path(comment),
         id: "commontator-comment-#{comment.id}-edit",
         class: 'edit',
-        remote: true
+        remote: true, class:"btn btn-info", style:"margin-right: 5px; padding: 3px; font-weight: bold;"
       ) if comment.can_be_edited_by?(user)
     %>
 
@@ -42,7 +42,7 @@
                   method: :put,
                   id: "commontator-comment-#{comment.id}-#{del_string}",
                   class: del_string,
-                  remote: true %>
+                  remote: true, class:"btn btn-danger btn-sm", style:"padding: 3px; font-weight: bold;" %>
     <% end %>
   </span>
 </div>
@@ -68,7 +68,7 @@
         link_to(
           t('commontator.comment.actions.reply'),
           commontator.new_thread_comment_path(thread, comment: { parent_id: comment.id }),
-          remote: true
+          remote: true, style:"font-weight: bold;"
         ) if thread.config.comment_reply_style != :n && !thread.is_closed?
       %>
     </span>
