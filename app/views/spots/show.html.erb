@@ -52,8 +52,10 @@
 <br>
 
 
-<% if current_user == @spot.host || current_user.admin? %>
-  <%= link_to 'EDIT', edit_spot_path(@spot), class:"btn btn-primary" %> |
-  <%= link_to 'DELETE', @spot, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %> |
+<% if user_signed_in? %>
+  <% if current_user == @spot.host || current_user.admin? %>
+    <%= link_to 'EDIT', edit_spot_path(@spot), class:"btn btn-primary" %> |
+    <%= link_to 'DELETE', @spot, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %> |
+  <% end %>
 <% end %>
 <%= link_to 'BACK', spots_path, class:"btn btn-sm btn-warning", style:"font-weight: bold;" %>
